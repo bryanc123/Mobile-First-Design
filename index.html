@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Mobile First Design</title>
+</head>
+<body>
+    <header>
+        <h1><a href="#">Mobile First Design</a></h1>
+        <nav>
+            <ul class="navigation">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </nav>
+        <a href="javascript:void(0);" class="hamburger-menu-icon" onClick="toggleMenu()">
+            <i class="fa fa-bars fa-2x"></i>
+            <i class="fa fa-times fa-2x"></i>
+        </a>
+    </header>
+    <div class="hamburger-menu">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </div>
+    <section class="bread-trail">
+        <a href="#">Home</a> > <a href="#">Subpage</a> > <a href="#">Subpage2</a>
+    </section>
+    <section class="main">
+        <div class="main-image-container">
+            <img src="./images/tapir.jpg" class="slideshow-image fade" alt="tapir">
+            <img src="./images/flamingo.jpg" class="slideshow-image fade" alt="flamingo">
+            <img src="./images/gull.jpg" class="slideshow-image fade" alt="gull">
+            <div class="image-navigation">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+            <p id="main-image-caption" class="caption">Tapir</p>
+            <p class="caption">Public domain photographs taken by Linnaea Mallette
+                <a href="https://www.publicdomainpictures.net/en/browse-author.php?a=18382">
+                    https://www.publicdomainpictures.net/en/browse-author.php?a=18382</a>
+            </p>
+        </div>
+        <div class="main-text">
+            <h2>Main Content</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Explicabo facere error voluptate.</p>
+            <button onClick="" class="main-button">Read More</button>
+        </div>
+    </section>
+    <section class="about">
+        <div class="about-icon">
+            <i class="fas fa-paw fa-5x"></i>
+        </div>
+        <div class="about-text">
+            <h2>About</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, officia. Necessitatibus, minus?</p>
+        </div>
+    </section>
+    <section class="features">
+        <div>
+            <img src="./images/tapir.jpg">
+            <h2>Feature 1</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>---</p>
+        </div>
+        <div>
+            <img src="./images/flamingo.jpg">
+            <h2>Feature 2</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>---</p>
+        </div>
+        <div>
+            <img src="./images/gull.jpg">
+            <h2>Feature 3</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>---</p>
+        </div>
+    </section>
+    <section class="staff">
+        <h2>Staff Members</h2>
+        <div class="staff-container grid">
+            <div class="staff-member-container">
+                <i class="far fa-user-circle fa-5x"></i>
+                <div class="staff-description">
+                    <h3>Person 1</h3>
+                    <p>Staff member description</p>
+                </div>
+            </div>
+            <div class="staff-member-container">
+                <i class="far fa-user-circle fa-5x"></i>
+                <div class="staff-description">
+                    <h3>Person 2</h3>
+                    <p>Staff member description</p>
+                </div>
+            </div>
+            <div class="staff-member-container">
+                <i class="far fa-user-circle fa-5x"></i>
+                <div class="staff-description">
+                    <h3>Person 3</h3>
+                    <p>Staff member description</p>
+                </div>
+            </div>
+            <div class="staff-member-container">
+                <i class="far fa-user-circle fa-5x"></i>
+                <div class="staff-description">
+                    <h3>Person 4</h3>
+                    <p>Staff member description</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-links-container">
+            <b>Links</b>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+        <div class="footer-links-container">
+            <b>More Links</b>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+        </div>
+        <div class="footer-links-container">
+            <b>Topics</b>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+        </div>
+    </footer>
+
+    <script>
+        // hamburger menu
+        function toggleMenu() {
+            let x = document.getElementsByClassName("hamburger-menu")[0];
+            let openIcon = document.getElementsByClassName("fa-bars")[0];
+            let closeIcon = document.getElementsByClassName("fa-times")[0];
+            if (x.style.display === "flex") {
+                x.style.display = "none";
+                openIcon.style.display = "block";
+                closeIcon.style.display = "none";
+            } else {
+                x.style.display = "flex";
+                openIcon.style.display = "none";
+                closeIcon.style.display = "block";
+            }
+        }
+
+        // slideshow
+        let slideIndex = 1;
+        let captions = ["Tapir", "Flamingo", "Baby Gull"]
+        showSlides(slideIndex);
+
+        // image navigation
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            document.getElementById("main-image-caption").textContent = captions[n - 1];
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slideshow-image");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1} 
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block"; 
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>
