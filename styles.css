@@ -71,7 +71,10 @@ nav li a {
 }
 .hamburger-menu {
     background-color: #F5DEB3;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    /* display: none; */
     flex-direction: column;
 }
 .hamburger-menu li {
@@ -311,6 +314,15 @@ footer {
     .main {
         padding: 20px;
         margin-top: 0;
+    }
+    .main {
+        flex-direction: row;
+    }
+    .main-image {
+        width: 50%;
+    }
+    .main-text {
+        width: 50%;
     }
 
     .caption {

@@ -162,18 +162,13 @@
     <script>
         // hamburger menu
         function toggleMenu() {
-            let x = document.getElementsByClassName("hamburger-menu")[0];
-            let openIcon = document.getElementsByClassName("fa-bars")[0];
-            let closeIcon = document.getElementsByClassName("fa-times")[0];
-            if (x.style.display === "flex") {
-                x.style.display = "none";
-                openIcon.style.display = "block";
-                closeIcon.style.display = "none";
+            let panel = document.querySelector(".hamburger-menu");
+
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
             } else {
-                x.style.display = "flex";
-                openIcon.style.display = "none";
-                closeIcon.style.display = "block";
-            }
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
         }
 
         // slideshow
