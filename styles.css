@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
 :root {
     --primary: lightgray;
     --secondary: gray;
@@ -9,11 +11,15 @@
     margin: 0;
 }
 
-body {
-    background-color: white;
+html {
+    font-family: 'Josefin Sans';
 }
 
-/* reset */
+body {
+    background-color: #F1F8E9;
+}
+
+/* Reset */
 
 a,p,ul,li {
     margin: 0;
@@ -24,7 +30,8 @@ li {
     list-style-type: none;
 }
 
-/* base styles */
+/* Base Styles */
+
 h1 {
     font-size: 1.6em;
 }
@@ -45,22 +52,33 @@ h2 {
     gap: 10px;
 }
 
-/* header */
+/* Header */
+
 header {
-    background-color: lightgray;
+    background-color: green;
+    display: flex;
     padding: 20px;
 }
 
-/* navigation */
+header a {
+    color: white;
+}
+
 nav ul {
     display: none;
 }
-
-header {
-    display: flex;
+nav ul li {
+    padding: 10px 20px;
+    text-align: center;
+    border-bottom: 1px solid green;
 }
-header a {
-    color: black;
+nav ul li:hover {
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+nav li a {
+    color: white;
 }
 
 .hamburger-menu-icon {
@@ -71,35 +89,44 @@ header a {
     display: none;
 }
 .hamburger-menu {
-    background-color: lightgray;
-    border-top: 1px solid black;
+    background-color: #F5DEB3;
     display: none;
     flex-direction: column;
+}
+.hamburger-menu li {
+    border-bottom: 1px solid #DEB887;
     padding: 10px 20px;
 }
 .hamburger-menu a {
-    border-bottom: 1px solid black;
     color: black;
     padding: 10px 0;
 }
 .hamburger-menu a:hover {
-    background-color: #E8E8E8;
+    color: rgba(0, 0, 0, 0.8);
 }
 
-/* bread trail */
+/* Bread Trail */
+
 .bread-trail {
     font-size: 0.8em;
     margin-top: 10px;
     padding: 0 20px;
 }
+.bread-trail a {
+    color: black;
+}
+.bread-trail a:hover {
+    color: green;
+}
 
-/* main */
+/* Main */
+
 .main {
     display: block;
     margin-top: 20px;
 }
 
-.main-image-container {
+.main-image {
     background-color: black;
     color: white;
     margin: 0px auto;
@@ -107,9 +134,21 @@ header a {
     padding: 10px;
     width: 250px;
 }
-
-.main-image-container img {
+.main-image img {
     width: 100%;
+}
+.main-image__caption {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.main-image__caption-description {
+    font-size: 1.2rem;
+}
+.main-image__caption-description a {
+    color: white;
+}
+.main-image__caption-description a:hover {
+    color: #00FFFF;
 }
 
 .image-navigation {
@@ -118,41 +157,58 @@ header a {
 }
 
 .main-text {
-    background-color: lightgray;
+    background-color: #F5DEB3;
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 20px;
 }
-
-.main-button {
+.main-text__heading {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+.main-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.main-text__button {
+    background-color: #8B4513;
     border: none;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: orange;
-    color: black;
     border-radius: 20px;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 10px;
+    padding: 10px 20px;
 }
-.main-button:hover {
+.main-text__button:hover {
     background-color: #FFC966;
+    color: black;
     cursor: pointer;
 }
 
-/* about */
+/* About */
 .about {
     display: flex;
     padding: 20px;
+    margin: 20px 0;
 }
-
-.about-text {
-    background-color: white;
+.about__icon {
+    padding: 0 20px;
+}
+.about__text {
     flex-grow: 1;
-    margin-left: 10px;
+    padding: 0 20px;
+}
+.about__text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.about__text p {
+    font-size: 1.2rem;
 }
 
-/* features */
+/* Features */
 .features {
     align-items: center;
-    background-color: lightgray;
+    background-color: #ACE1AF;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -167,7 +223,8 @@ header a {
     width: 250px;
 }
 
-/* dots/bullets/indicators */
+/* Dots/Bullets/Indicators */
+
 .dot {
     cursor: pointer;
     height: 15px;
@@ -183,7 +240,8 @@ header a {
     background-color: #717171;
 }
 
-/* fading animation */
+/* Fading Animation */
+
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -206,52 +264,75 @@ header a {
     .prev, .next,.text {font-size: 11px}
 }
 
-/* staff */
+/* Staff */
+
 .staff {
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
 }
-
+.staff__heading {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
 .staff-container {
-    margin-top: 20px;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.staff-container .staff-member-container {
     display: flex;
-    grid-column: 1 / 3;
-}
-
-.staff-container .staff-member-container i {
-    background-color: #FFE4B3;
-    padding: 10px;
-}
-
-.staff-container .staff-description {
-    background-color: lightgray;
-    padding: 10px;
-}
-
-/* footer */
-footer {
-    background-color: lightgray;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-}
-
-.footer-links-container {
-    display:flex;
     flex-direction: column;
 }
 
-/* large phone styles */
+.staff-member {
+    display: flex;
+    margin-bottom: 20px;
+}
+.staff-member i {
+    background-color: #FFE4B3;
+    padding: 20px;
+}
+
+.staff-description {
+    background-color: #FAFAFA;
+    padding: 20px;
+}
+.staff-description h3 {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+
+footer {
+    background-color: green;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+.footer-section__heading {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.footer-section__items li {
+    margin-bottom: 10px;
+}
+.footer-section__items li a {
+    color: white;
+    font-size: 1.2rem;
+}
+.footer-section__items li a:hover {
+    color: yellow;
+}
+
+/* Large Phone Styles */
+
 @media screen and (min-width: 400px) {
-    .main-image-container {
+    .main-image {
         width: 320px;
     }
 }
 
-/* tablet and laptop styles */
+/* Tablet and Laptop Styles */
+
 @media screen and (min-width: 641px) {
     header {
         display: grid;
@@ -266,21 +347,17 @@ footer {
     nav ul {
         display: flex;
     }
-    nav ul li {
-        width: 100px;
-        padding: 10px 20px;
-        text-align: center;
-        border-right: 1px solid black;
-    }
-    nav ul li:hover {
-        background-color: #E8E8E8;
-        cursor: pointer;
-    }
-    nav ul li a {
-        color: black;
-    }
+
     .hamburger-menu-icon {
         display: none;
+    }
+
+    /* Bread Trail */
+
+    .bread-trail {
+        font-size: 1em;
+        margin-top: 10px;
+        padding: 0 20px;
     }
 
     /* main */
@@ -290,7 +367,7 @@ footer {
         margin-top: 0;
         grid-template-columns: 550px 200px;
     }
-    .main-image-container {
+    .main-image {
         width: 550px;
     }
     .main-text {
@@ -316,9 +393,16 @@ footer {
     .staff-description {
         width: 400px;
     }
+
+    /* footer */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
-/* desktop styles */
+/* Desktop Styles */
+
 @media screen and (min-width: 1008px) {
     header {
         display: grid;
@@ -328,30 +412,13 @@ footer {
         justify-self: end;
     }
 
-    nav ul {
-        display: flex;
-    }
-    nav ul li {
-        width: 100px;
-        padding: 10px 20px;
-        text-align: center;
-        border-right: 1px solid black;
-    }
-    nav ul li:hover {
-        background-color: #E8E8E8;
-        cursor: pointer;
-    }
-    nav ul li a {
-        color: black;
-    }
-
     /* main */
     .main {
         display: grid;
         padding: 20px;
         grid-template-columns: 650px 330px;
     }
-    .main-image-container {
+    .main-image {
         width: 650px;
     }
     .main-text {
@@ -377,7 +444,8 @@ footer {
     }
 }
 
-/* very large screens */
+/* Very Large Screens */
+
 @media screen and (min-width: 1200px) {
     .main {
         display: grid;
@@ -385,7 +453,7 @@ footer {
         margin-top: 0;
         grid-template-columns: 750px 400px;
     }
-    .main-image-container {
+    .main-image {
         width: 750px;
     }
     .main-text {
