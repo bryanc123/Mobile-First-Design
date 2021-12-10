@@ -163,11 +163,17 @@
         // hamburger menu
         function toggleMenu() {
             let panel = document.querySelector(".hamburger-menu");
+            let openButton = document.querySelector(".fa-bars");
+            let closeButton = document.querySelector(".fa-times");
 
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
+                openButton.style.display = "block";
+                closeButton.style.display = "none";
             } else {
                 panel.style.maxHeight = panel.scrollHeight + "px";
+                openButton.style.display = "none";
+                closeButton.style.display = "block";
             } 
         }
 

@@ -30,6 +30,7 @@ li {
 /* Header */
 
 header {
+    align-items: center;
     background-color: green;
     display: flex;
     padding: 20px;
